@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1 Strategy Simulation Game</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="weather.js"></script>
+    <script src="car.js"></script>
+    <script src="lapinfo.js"></script>
+    <script src="game.js"></script>
+
+</head>
+<body>
+<h1 class="text-center my-4">Formula 1 Strategy Simulation Game</h1>
+<button onclick="startGame()" class="btn btn-primary mb-4">Start Game</button>
+
+<div class="row">
+    <div class="col-md-6">
+    <div id="track-container">
+        <div id="controls">
+            <label for="tyreSelect">Choose tyre type:</label>
+            <select id="tyreSelect" disabled>
+                <option value="hard">Hard</option>
+                <option value="soft">Soft</option>
+                <option value="wet">Wet</option>
+            </select>
+            <button id="changeTyreBtn" onclick="changeTyre()" disabled>Change Tyre</button>
+        </div>
+
+        <svg id="track" width="300" height="300">
+            <path id="silverstonePath" d="M50,250 C10,250 10,150 50,150 L130,150 C190,150 190,100 130,100 L70,100 C30,100 30,30 70,30 L150,30 C270,30 270,250 150,250 Z" stroke="white" stroke-width="20" fill="none" />
+            <text id="car" x="100" y="250" font-size="20" dominant-baseline="middle" text-anchor="middle" fill="white">&#x1F3CE;</text>
+        </svg>
+
+
+    </div>
+        <div id="raceLogContainer">
+            <h3>Race Log</h3>
+            <div id="raceLog"></div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+
+    <div id="info-container">
+        <h2>Pit Wall</h2>
+
+            <div id="laptimes">
+            <table id="lapinfotable">
+            <tr>
+                <th>Lap</th>
+                <th>Weather</th>
+                <th>Tyre</th>
+                <th>Lap Time</th>
+            </tr>
+            </table>
+            </div>
+
+    </div>
+
+    </div>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
